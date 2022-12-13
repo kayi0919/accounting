@@ -1,50 +1,90 @@
-import 'package:calendar/DPageData/calendar.dart';
+
 import 'package:flutter/material.dart';
+import 'APage.dart';
+import 'BPage.dart';
+import 'CPage.dart';
 import 'DPage.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('首頁'),
-          backgroundColor: Colors.green,
-        ),
-        body: HomePage(),
+      title: "Menu Demo",
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+        home: const HomePage(title: '首頁'),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  const HomePage({super.key, required this.title});
+  final String title;
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      primary: false,
-      padding: const EdgeInsets.all(20),
-      crossAxisSpacing: 10,
-      mainAxisSpacing: 10,
-      crossAxisCount: 2,
-      children: <Widget>[
-
-
-        OutlinedButton(
-          child: const Icon(Icons.edit_calendar ,size:100),
-          onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => DPage())
-            );
-          },
+    return Scaffold(
+      appBar: AppBar(title: Text(widget.title)),
+      body: const Center(
+        child: Text(''),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Text(''),
+            ),
+            ListTile(
+              title: const Text('收入'),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => const APage())
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('支出'),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => const BPage())
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('總計'),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => const CPage())
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('行事曆'),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => const DPage())
+                );
+              },
+            ),
+          ],
         ),
-
-      ],
-
+      ),
     );
-
   }
 }
