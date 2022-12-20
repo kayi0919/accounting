@@ -1,6 +1,7 @@
-import 'package:calendar/DPageData/event.dart';
+import 'package:expense/DPageData/event.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+
 
 class Calendar extends StatefulWidget {
   const Calendar({super.key});
@@ -39,9 +40,14 @@ class _CalendarState extends State<Calendar> {
       appBar: AppBar(
         title: const Text("行事曆"),
         centerTitle: true,
+
       ),
       body: Column(
         children: [
+          SizedBox(
+            width: 30.0,
+          ),
+
           TableCalendar(
             focusedDay: selectedDay,
             firstDay: DateTime(1990),
