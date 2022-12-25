@@ -1,16 +1,8 @@
-# money_expense_manager
+記帳demo
 
-A new Flutter project.
+改寫以下網址code:
+https://flutterawesome.com/money-expense-manager-application-built-with-flutter/
+https://medium.flutterdevs.com/display-dynamic-events-at-calendar-in-flutter-22b69b29daf6
+https://pub.dev/packages/table_calendar
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

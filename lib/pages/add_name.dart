@@ -77,7 +77,7 @@ class _AddNameState extends State<AddName> {
             ),
             //
             Text(
-              "使用者名稱?",
+              "請輸入使用者名稱",
               textAlign: TextAlign.right,
               style: TextStyle(
                 fontSize: 24.0,
